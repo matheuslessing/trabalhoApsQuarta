@@ -21,25 +21,16 @@ public class TestMockito {
 		CorreioService correioServiceMock = Mockito.mock(CorreioService.class);
 	}
 	
-	
-	@Test
-	public void test() {
-		CorreioService correioServiceMock = Mockito.mock(CorreioService.class);
-		when(correioServiceMock.getCep()).thenReturn("cachoeirinha");
-		Assert.assertEquals("cachoeirinha", casa.getEndereco());
-		System.out.println(casa.getEndereco());
-	}
-	
 	@Test
 	public void testMockGetEndereco900000() {
 		// 1 passo, é criar o mock
 		CorreioService correioServiceMock = Mockito.mock(CorreioService.class);
 		
 		// 2 passo, e definir o que simular, o que retornar.
-		when(correioServiceMock.buscaEndereco('900000')).thenReturn('Porto Alegre');
+		when(correioServiceMock.buscaEndereco("900000")).thenReturn("Porto Alegre");
 		
 		// 3 passo, executar o teste.
-		Assert.assertEquals('Porto Alegre', correioServiceMock.buscaEndereco());		
+		Assert.assertEquals("Porto Alegre", correioServiceMock.buscaEndereco());		
 		
 	}
 	
@@ -49,10 +40,10 @@ public class TestMockito {
 		CorreioService correioServiceMock = Mockito.mock(CorreioService.class);
 		
 		// 2 passo, e definir o que simular, o que retornar.
-		when(correioServiceMock.buscaEndereco('800000')).thenReturn('Av. Assis Brasil');
+		when(correioServiceMock.buscaEndereco("800000")).thenReturn("Av. Assis Brasil");
 		
 		// 3 passo, executar o teste.
-		Assert.assertEquals('Av. Assis Brasil', correioServiceMock.buscaEndereco());
+		Assert.assertEquals("Av. Assis Brasil", correioServiceMock.buscaEndereco());
 		
 	}
 	
