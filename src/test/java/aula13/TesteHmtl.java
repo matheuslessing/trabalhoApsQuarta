@@ -49,7 +49,7 @@ package aula13;
 	         WebElement campoEndereco = driver.findElement(By.id("endereco"));
 	         WebElement campoSexo = driver.findElement(By.id("sexo"));
 	         WebElement campoIdade= driver.findElement(By.id("idade"));
-	         WebElement submit = driver.findElement(By.id("submit"));
+	         WebElement submit = driver.findElement(By.id("botao_somar"));
 	         campoNome.sendKeys("teste");
 	         campoEndereco.sendKeys("123");
 	         campoSexo.sendKeys("Masculino");
@@ -67,7 +67,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id("endereco"));
 		         WebElement campoSexo = driver.findElement(By.id("sexo"));
 		         WebElement campoIdade= driver.findElement(By.id("idade"));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("teste");
 		         campoEndereco.sendKeys("Avenida Suarez, 185");
 		         campoSexo.sendKeys("Feminino");
@@ -85,7 +85,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id(""));
 		         WebElement campoSexo = driver.findElement(By.id(""));
 		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("");
 		         campoEndereco.sendKeys("Avenida Suarez, 185");
 		         campoSexo.sendKeys("Masculino");
@@ -103,7 +103,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id(""));
 		         WebElement campoSexo = driver.findElement(By.id(""));
 		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("Ivan");
 		         campoEndereco.sendKeys("");
 		         campoSexo.sendKeys("Masculino");
@@ -114,22 +114,22 @@ package aula13;
 		    }
 	     
 	     @Test
-		    public void testLoginErroSexoVazio(){
-		        driver.get(hmtl);
-		        
-		        WebElement campoNome = driver.findElement(By.id(""));
-		         WebElement campoEndereco = driver.findElement(By.id(""));
-		         WebElement campoSexo = driver.findElement(By.id(""));
-		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
-		         campoNome.sendKeys("Ivan");
-		         campoEndereco.sendKeys("Avenida Suarez, 185");
-		         campoSexo.sendKeys("");
-		         campoIdade.sendKeys("18");
-		         submit.click();
-		         String codigProximaPagina =  driver.getPageSource();
-		         Assert.assertTrue(codigProximaPagina.contains("Selecione um valor para o campo sexo"));
-		    }
+			public void testSexoVazio(){
+				
+			WebElement campoNome = driver.findElement(By.id("nome"));
+			WebElement campoEndereco = driver.findElement(By.id("endereco"));
+			WebElement campoSexo = driver.findElement(By.id("sexo"));
+			WebElement campoIdade= driver.findElement(By.id("idade"));
+			WebElement botaoSalvar = driver.findElement(By.id("botao_somar"));
+			WebElement campoResultado= driver.findElement(By.id("resultado"));
+			campoNome.sendKeys("teste");
+			campoEndereco.sendKeys("Avenida Suarez, 185");
+			campoSexo.sendKeys("");
+			campoIdade.sendKeys("18");
+			botaoSalvar.click();
+			String resultado =  "Selecione um valor para o campo sexo";
+			Assert.assertTrue(campoResultado.getText().equals(resultado));
+		}
 	     
 	     @Test
 		    public void testLoginErroIdadeVazio(){
@@ -139,7 +139,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id(""));
 		         WebElement campoSexo = driver.findElement(By.id(""));
 		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("Ivan");
 		         campoEndereco.sendKeys("Avenida Suarez, 185");
 		         campoSexo.sendKeys("Masculino");
@@ -157,7 +157,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id(""));
 		         WebElement campoSexo = driver.findElement(By.id(""));
 		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("Ivan");
 		         campoEndereco.sendKeys("Avenida Suarez, 185");
 		         campoSexo.sendKeys("Masculino");
@@ -175,7 +175,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id(""));
 		         WebElement campoSexo = driver.findElement(By.id(""));
 		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("Ivan");
 		         campoEndereco.sendKeys("Avenida Suarez, 185");
 		         campoSexo.sendKeys("Masculino");
@@ -193,7 +193,7 @@ package aula13;
 		         WebElement campoEndereco = driver.findElement(By.id(""));
 		         WebElement campoSexo = driver.findElement(By.id(""));
 		         WebElement campoIdade= driver.findElement(By.id(""));
-		         WebElement submit = driver.findElement(By.id("submit"));
+		         WebElement submit = driver.findElement(By.id("botao_somar"));
 		         campoNome.sendKeys("Ivan");
 		         campoEndereco.sendKeys("Avenida Suarez, 185");
 		         campoSexo.sendKeys("Masculino");
